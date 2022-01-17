@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "webpack-dev-server",
     "build": "webpack"
   },
   "repository": {
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/GaoJianXin520/typescript02#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "ts-loader": "^4.4.2",
     "typescript": "^4.5.4",

@@ -31,7 +31,7 @@ module.exports = {
             template: './src/index.html',
             filename: 'index.html',
         }),
-        new CleanWebpackPlugin();
+        new CleanWebpackPlugin()
     ],
     resolve: {
         extensions: ['.ts', '.js']

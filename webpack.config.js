@@ -8,7 +8,10 @@ module.exports = {
     entry: './src/index.ts',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        environment: {
+            arrowFunction: false
+        }
     },
     devServer: {
         port: 3000,
@@ -21,7 +24,24 @@ module.exports = {
         rules: [
             {
                 test: /\.ts$/, 
-                use: 'ts-loader',
+                use: [
+                    // {
+                    //     loader: 'babel-loader',
+                    //     options: {
+                    //         presets: [
+                    //             '@babel/preset-env',
+                    //             {
+                    //                 targets: {
+                    //                     chrome: '88',
+                    //                 },
+                    //                 corejs: '3',
+                    //                 useBuiltIns: 'usage'
+                    //             }
+                    //         ]
+                    //     }
+                    // },
+                    'ts-loader'
+                ],
                 exclude: /node_modlues/
             }
         ]

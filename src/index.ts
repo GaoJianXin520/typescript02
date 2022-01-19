@@ -118,3 +118,38 @@ class MyClass implements myInterface2 {
         console.log('abc');
     }
 }
+
+function fn<T>(a: T): T {
+    return a;
+}
+
+let fnRes = fn<string>('abc');
+let fnRes2 = fn<number>(123);
+
+
+function fn2<T, K>(a: T, b: K): K {
+    return b;
+}
+
+fn2<string, number>('abc', 123);
+
+interface myInterFace3 {
+    name: string
+}
+
+function fn3<T extends myInterFace3>(a: T): string {
+    return a.name;
+}
+
+fn3({name: 'abc'});
+
+class Class1<T> {
+    name: T;
+
+    constructor(name: T) {
+        this.name = name;
+    }
+}
+
+const c1 = new Class1<string>('abc');
+console.log(c1);
